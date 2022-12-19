@@ -420,7 +420,7 @@ position = Vector2( 13015.4, 1154.69 )
 heartfull = false
 
 [node name="AnimatedSprite" parent="Objects/Chest2" index="0"]
-frame = 3
+frame = 2
 
 [node name="Gate" parent="Objects" instance=ExtResource( 10 )]
 position = Vector2( 16229.3, 893.119 )
@@ -432,7 +432,7 @@ position = Vector2( 8305.14, 937.099 )
 position = Vector2( 17672.1, 1152.64 )
 
 [node name="AnimatedSprite" parent="Objects/Chest" index="0"]
-frame = 3
+frame = 2
 
 [node name="Tombstone" parent="Objects" instance=ExtResource( 14 )]
 position = Vector2( 1821.03, 1134.03 )
@@ -465,8 +465,8 @@ texture = ExtResource( 11 )
 [connection signal="body_entered" from="LabelAreas/LabeBossArea" to="." method="_on_LabeBossArea_body_entered"]
 [connection signal="body_exited" from="LabelAreas/LabeBossArea" to="." method="_on_LabelArea_body_exited"]
 [connection signal="body_exited" from="LabelAreas/LabeBossArea" to="." method="_on_LabeBossArea_body_exited"]
-[connection signal="body_entered" from="LabelAreas/LabelGate" to="." method="_on_LabelGate_body_entered"]
 [connection signal="body_entered" from="LabelAreas/LabelGate" to="." method="_on_LabelArea_body_entered"]
+[connection signal="body_entered" from="LabelAreas/LabelGate" to="." method="_on_LabelGate_body_entered"]
 [connection signal="body_exited" from="LabelAreas/LabelGate" to="." method="_on_LabelGate_body_exited"]
 [connection signal="body_exited" from="LabelAreas/LabelGate" to="." method="_on_LabelArea_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
