@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Projectile.gd" type="Script" id=1]
+[ext_resource path="res://HurtHitbox/Hitbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Weapons/Shuriken/shuriken 1.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 31.7949
+
+[node name="Projectile" instance=ExtResource( 2 )]
+collision_mask = 6
+script = ExtResource( 1 )
+SPEED = 1000
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 0.663437, 0.6634 )
+rotation = 0.760963
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+modulate = Color( 0.956863, 0.956863, 0.956863, 1 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
+
+[connection signal="area_entered" from="." to="." method="_on_Projectile_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

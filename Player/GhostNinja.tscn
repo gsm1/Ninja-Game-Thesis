@@ -1,0 +1,187 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Characters/Ghost Ninja/attack 2/Ghostninja_attack2_1.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Ghost Ninja/attack 2/Ghostninja_attack2_2.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Ghost Ninja/attack 2/Ghostninja_attack2_3.png" type="Texture" id=3]
+[ext_resource path="res://Music and Sounds/Swipe.wav" type="AudioStream" id=4]
+[ext_resource path="res://Characters/Ghost Ninja/attack 2/Ghostninja_attack2_4.png" type="Texture" id=5]
+[ext_resource path="res://Player/GhostNinja.gd" type="Script" id=6]
+[ext_resource path="res://HurtHitbox/Hitbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Characters/Ghost Ninja/fly/Ghostninja_fly_3.png" type="Texture" id=8]
+[ext_resource path="res://Characters/Ghost Ninja/fly/Ghostninja_fly_4.png" type="Texture" id=9]
+[ext_resource path="res://Characters/Ghost Ninja/fly/Ghostninja_fly_2.png" type="Texture" id=10]
+[ext_resource path="res://Characters/Ghost Ninja/fly/Ghostninja_fly_1.png" type="Texture" id=11]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 50.9753
+height = 61.2138
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -50 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 11 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "attacklevel1"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -50 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 119.599, 122.272 )
+
+[node name="GhostNinja" type="KinematicBody2D"]
+position = Vector2( 156.548, 626.19 )
+scale = Vector2( 6, 6 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -7.14296, 2.33873 )
+shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 11 )
+offset = Vector2( 0, -50 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.3
+anims/RESET = SubResource( 2 )
+anims/attacklevel1 = SubResource( 3 )
+anims/attacklevel2 = SubResource( 4 )
+anims/idle = SubResource( 6 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 7 )]
+collision_mask = 8
+damage = 5
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 2.40332, -35.3116 )
+shape = SubResource( 5 )
+disabled = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+
+[editable path="Hitbox"]

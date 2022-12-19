@@ -1,0 +1,126 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://HurtHitbox/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://HurtHitbox/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=3]
+[ext_resource path="res://PlayerDetectionZone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Bat/hit/Bat_Hit_5.png" type="Texture" id=5]
+[ext_resource path="res://Characters/Bat/hit/Bat_Hit_3.png" type="Texture" id=6]
+[ext_resource path="res://Characters/Bat/fly/Bat_Fly_3.png" type="Texture" id=7]
+[ext_resource path="res://Characters/Bat/hit/Bat_Hit_2.png" type="Texture" id=8]
+[ext_resource path="res://Characters/Bat/hit/Bat_Hit_1.png" type="Texture" id=9]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_4.png" type="Texture" id=10]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_1.png" type="Texture" id=11]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_2.png" type="Texture" id=12]
+[ext_resource path="res://HurtHitbox/SoftCollision.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Characters/Bat/fly/Bat_Fly_4.png" type="Texture" id=16]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_15.png" type="Texture" id=17]
+[ext_resource path="res://Characters/Bat/fly/Bat_Fly_1.png" type="Texture" id=18]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_9.png" type="Texture" id=19]
+[ext_resource path="res://Characters/Bat/hit/Bat_Hit_4.png" type="Texture" id=20]
+[ext_resource path="res://Characters/Bat/hit/Bat_Hit_8.png" type="Texture" id=21]
+[ext_resource path="res://Characters/Bat/fly/Bat_Fly_2.png" type="Texture" id=22]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_14.png" type="Texture" id=23]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_6.png" type="Texture" id=24]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_13.png" type="Texture" id=25]
+[ext_resource path="res://Characters/Bat/hit/Bat_Hit_7.png" type="Texture" id=26]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_5.png" type="Texture" id=27]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_7.png" type="Texture" id=30]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_10.png" type="Texture" id=31]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_8.png" type="Texture" id=33]
+[ext_resource path="res://Characters/Bat/hit/Bat_Hit_6.png" type="Texture" id=36]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_3.png" type="Texture" id=37]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_11.png" type="Texture" id=39]
+[ext_resource path="res://Characters/Bat/die/Bat_Die_12.png" type="Texture" id=42]
+[ext_resource path="res://Enemies/Bat.gd" type="Script" id=44]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 37 ), ExtResource( 10 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 19 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 25 ), ExtResource( 23 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "die",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 22 ), ExtResource( 7 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "fly",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 20 ), ExtResource( 5 ), ExtResource( 36 ), ExtResource( 26 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "hit",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 64.4251
+height = 2.41444
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 40.2653
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 399.616
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 26.8708
+
+[node name="Bat" type="KinematicBody2D"]
+position = Vector2( 1.54758, 3.86893 )
+collision_layer = 16
+collision_mask = 3
+script = ExtResource( 44 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.54758, -64.9979 )
+frames = SubResource( 1 )
+animation = "fly"
+frame = 2
+playing = true
+offset = Vector2( 0, -12 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -3.8689, -7.73784 )
+polygon = PoolVector2Array( -9.32616, 8.87308, 9.88765, 9.81801, -0.506698, -14.7504 )
+
+[node name="Hurtbox" parent="." groups=["Bats"] instance=ExtResource( 2 )]
+visible = false
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -4.52251, -45.3127 )
+shape = SubResource( 3 )
+
+[node name="Stats" parent="." instance=ExtResource( 3 )]
+max_health = 3
+
+[node name="Hitbox" parent="." instance=ExtResource( 1 )]
+position = Vector2( -6.96408, -80.4736 )
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 4 )
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 4 )]
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+modulate = Color( 1, 1, 1, 0.364706 )
+shape = SubResource( 5 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 13 )]
+position = Vector2( -3.5636, -7.1272 )
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+shape = SubResource( 6 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]
+[editable path="PlayerDetectionZone"]
+[editable path="SoftCollision"]

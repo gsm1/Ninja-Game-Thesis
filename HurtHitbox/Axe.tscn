@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://HurtHitbox/Axe.gd" type="Script" id=1]
+[ext_resource path="res://HurtHitbox/Hitbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Skeleton 1/attack 2/skeleton1_attack2_4.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 22.5509 )
+
+[node name="Axe" instance=ExtResource( 2 )]
+collision_mask = 6
+script = ExtResource( 1 )
+SPEED = 1000
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 1.16073, -6.59669 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+rotation = -3.14159
+texture = ExtResource( 3 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
+
+[connection signal="area_entered" from="." to="." method="_on_Projectile_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

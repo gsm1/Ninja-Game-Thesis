@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Objects/portal_yellowParticle.png" type="Texture" id=1]
+[ext_resource path="res://UI/UltraUi.gd" type="Script" id=2]
+
+[node name="UltraUi" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UltraUIEmpty" type="TextureRect" parent="."]
+modulate = Color( 0.184314, 0.164706, 0.164706, 1 )
+margin_right = 60.0
+margin_bottom = 20.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UltraUIFull" type="TextureRect" parent="."]
+margin_bottom = 20.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

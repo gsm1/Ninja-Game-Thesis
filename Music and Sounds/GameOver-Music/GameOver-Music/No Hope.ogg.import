@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/No Hope.ogg-e8b6625ad7c23c481e0cc93f3d542746.oggstr"
+
+[deps]
+
+source_file="res://Music and Sounds/GameOver-Music/GameOver-Music/No Hope.ogg"
+dest_files=[ "res://.import/No Hope.ogg-e8b6625ad7c23c481e0cc93f3d542746.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

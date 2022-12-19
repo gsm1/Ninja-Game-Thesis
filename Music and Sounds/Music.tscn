@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Music and Sounds/temple.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/Music.gd" type="Script" id=2]
+[ext_resource path="res://Music and Sounds/bossmusic.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Music and Sounds/GameOver-Music/GameOver-Music/Retro_No hope.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Music and Sounds/kingdom of a million elephants under a white parasol.ogg" type="AudioStream" id=5]
+
+[node name="Music" type="Node"]
+pause_mode = 1
+script = ExtResource( 2 )
+
+[node name="WorldMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Music"
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Music"
+
+[node name="LoseMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 4 )
+bus = "Music"
+
+[node name="WinMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Music"

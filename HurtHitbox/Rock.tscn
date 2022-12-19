@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://HurtHitbox/Hitbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Boss 2/attack 2/Boss2_attack2_7 - Copy - Copy.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends \"res://HurtHitbox/Hitbox.gd\"
+
+
+export var SPEED = 1000
+
+
+func _physics_process(delta):
+#	rotate(0.1)
+	
+	var direction = Vector2.RIGHT.rotated(rotation)
+	global_position += SPEED*direction*delta
+
+func destroy():
+	queue_free()
+
+func _on_Projectile_area_entered(area):
+	destroy()
+
+
+func _on_Projectile_body_entered(body):
+	destroy()
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
+"
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 39.4087
+
+[node name="Rock" instance=ExtResource( 2 )]
+collision_mask = 6
+script = SubResource( 2 )
+SPEED = 1000
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( -0.712157, 2.01858 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+rotation = -3.14159
+texture = ExtResource( 3 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
+
+[connection signal="area_entered" from="." to="." method="_on_Projectile_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

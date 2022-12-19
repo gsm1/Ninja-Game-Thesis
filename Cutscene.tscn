@@ -1,0 +1,325 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/PlayerBrother.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cutscene.gd" type="Script" id=5]
+[ext_resource path="res://Enemies/Boss3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://PathFollow2D.gd" type="Script" id=7]
+[ext_resource path="res://PathFollow2DBoss.gd" type="Script" id=8]
+[ext_resource path="res://UI/poco/Poco.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Player/GhostNinja.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/ButtonTheme.tres" type="Theme" id=11]
+[ext_resource path="res://Enemies/EvilNinja.tscn" type="PackedScene" id=49]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 190.033, 115.749 )
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 651.536, 2415.96, 0, 0, 0, 0, 3440.94, 2440.58 )
+}
+
+[sub_resource type="Animation" id=3]
+length = 10.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("Player1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "cutscene"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("PlayerBrother")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "cutscenerun"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../Fade:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../../Fade:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3773.28, 2806.33, 0, 0, 0, 0, 3176.69, 2793.25, 0, 0, 0, 0, 5348.25, 2786.9 )
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 53.895, 155.072 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 60
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 60
+font_data = ExtResource( 9 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 348.202, 70.9882 )
+
+[node name="Cutscene" type="Node2D"]
+position = Vector2( 2.95245, -681.729 )
+script = ExtResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 3443.12, 1733.73 )
+rotation = 0.0123193
+scale = Vector2( 1.2, 1.2 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+position = Vector2( -6.33789, -44.3657 )
+tile_data = PoolIntArray( 524304, 1, 0, 983040, 4, 0, 983041, 4, 0, 983042, 4, 0, 983043, 4, 0, 983044, 4, 0, 983045, 4, 0, 983046, 4, 0, 983047, 4, 0, 983048, 4, 0, 983049, 4, 0, 983050, 4, 0, 983051, 4, 0, 983052, 4, 0, 983053, 4, 0, 983054, 4, 0, 983055, 4, 0, 983056, 4, 0, 983057, 4, 0, 983058, 4, 0, 983059, 4, 0, 983060, 4, 0, 983061, 4, 0, 983062, 4, 0, 983063, 4, 0, 983064, 4, 0, 983065, 4, 0, 983066, 4, 0, 983067, 0, 0, 983068, 4, 0, 983069, 4, 0, 983070, 4, 0, 983071, 4, 0, 983072, 4, 0, 983073, 0, 0, 983074, 4, 0, 983075, 4, 0, 983076, 4, 0, 983077, 4, 0, 983078, 4, 0, 983079, 4, 0, 983080, 4, 0, 983081, 4, 0, 983082, 4, 0, 983083, 4, 0, 983084, 4, 0, 983085, 4, 0, 983086, 4, 0, 983087, 4, 0, 983088, 4, 0, 983089, 4, 0, 983090, 4, 0, 983091, 4, 0, 983092, 0, 0, 1048576, 3, 0, 1048577, 3, 0, 1048578, 3, 0, 1048579, 3, 0, 1048580, 3, 0, 1048581, 3, 0, 1048582, 3, 0, 1048583, 3, 0, 1048584, 3, 0, 1048585, 3, 0, 1048586, 3, 0, 1048587, 3, 0, 1048588, 3, 0, 1048589, 3, 0, 1048590, 3, 0, 1048591, 3, 0, 1048592, 3, 0, 1048593, 3, 0, 1048594, 3, 0, 1048595, 3, 0, 1048596, 3, 0, 1048597, 3, 0, 1048598, 3, 0, 1048599, 3, 0, 1048600, 3, 0, 1048601, 3, 0, 1048602, 3, 0, 1048603, 3, 0, 1048604, 3, 0, 1048605, 3, 0, 1048606, 3, 0, 1048607, 3, 0, 1048608, 3, 0, 1048609, 3, 0, 1048610, 3, 0, 1048611, 3, 0, 1048612, 3, 0, 1048613, 3, 0, 1048614, 3, 0, 1048615, 3, 0, 1048616, 3, 0, 1048617, 3, 0, 1048618, 3, 0, 1048619, 3, 0, 1048620, 3, 0, 1048621, 3, 0, 1048622, 3, 0, 1048623, 3, 0, 1048624, 3, 0, 1048625, 3, 0, 1048626, 3, 0, 1048627, 3, 0, 1048628, 3, 0, 1048629, 3, 0, 1114112, 3, 0, 1114113, 3, 0, 1114114, 3, 0, 1114115, 3, 0, 1114116, 3, 0, 1114117, 3, 0, 1114118, 3, 0, 1114119, 3, 0, 1114120, 3, 0, 1114121, 3, 0, 1114122, 3, 0, 1114123, 3, 0, 1114124, 3, 0, 1114125, 3, 0, 1114126, 3, 0, 1114127, 3, 0, 1114128, 3, 0, 1114129, 3, 0, 1114130, 3, 0, 1114131, 3, 0, 1114132, 3, 0, 1114133, 3, 0, 1114134, 3, 0, 1114135, 3, 0, 1114136, 3, 0, 1114137, 3, 0, 1114138, 3, 0, 1114139, 3, 0, 1114140, 3, 0, 1114141, 3, 0, 1114142, 3, 0, 1114143, 3, 0, 1114144, 3, 0, 1114145, 3, 0, 1114146, 3, 0, 1114147, 3, 0, 1114148, 3, 0, 1114149, 3, 0, 1114150, 3, 0, 1114151, 3, 0, 1114152, 3, 0, 1114153, 3, 0, 1114154, 3, 0, 1114155, 3, 0, 1114156, 3, 0, 1114157, 3, 0, 1114158, 3, 0, 1114159, 3, 0, 1114160, 3, 0, 1114161, 3, 0, 1114162, 3, 0, 1114163, 3, 0, 1114164, 3, 0, 1114165, 3, 0, 1179648, 3, 0, 1179649, 3, 0, 1179650, 3, 0, 1179651, 3, 0, 1179652, 3, 0, 1179653, 3, 0, 1179654, 3, 0, 1179655, 3, 0, 1179656, 3, 0, 1179657, 3, 0, 1179658, 3, 0, 1179659, 3, 0, 1179660, 3, 0, 1179661, 3, 0, 1179662, 3, 0, 1179663, 3, 0, 1179664, 3, 0, 1179665, 3, 0, 1179666, 3, 0, 1179667, 3, 0, 1179668, 3, 0, 1179669, 3, 0, 1179670, 3, 0, 1179671, 3, 0, 1179672, 3, 0, 1179673, 3, 0, 1179674, 3, 0, 1179675, 3, 0, 1179676, 3, 0, 1179677, 3, 0, 1179678, 3, 0, 1179679, 3, 0, 1179680, 3, 0, 1179681, 3, 0, 1179682, 3, 0, 1179683, 3, 0, 1179684, 3, 0, 1179685, 3, 0, 1179686, 3, 0, 1179687, 3, 0, 1179688, 3, 0, 1179689, 3, 0, 1179690, 3, 0, 1179691, 3, 0, 1179692, 3, 0, 1179693, 3, 0, 1179694, 3, 0, 1179695, 3, 0, 1179696, 3, 0, 1179697, 3, 0, 1179698, 3, 0, 1179699, 3, 0, 1179700, 3, 0, 1179701, 3, 0 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
+
+[node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
+motion_offset = Vector2( 0, -100 )
+
+[node name="Path2D" type="Path2D" parent="."]
+self_modulate = Color( 0.0784314, 0.243137, 0.890196, 0.701961 )
+show_behind_parent = true
+position = Vector2( -204.978, 6.25779 )
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 651.536, 2415.96 )
+rotation = 0.00886661
+loop = false
+script = ExtResource( 7 )
+
+[node name="PlayerBrother" parent="Path2D/PathFollow2D" instance=ExtResource( 4 )]
+position = Vector2( 62.8687, -717.807 )
+rotation = 0.00380247
+collision_layer = 1
+collision_mask = 2
+
+[node name="Player1" parent="Path2D/PathFollow2D" instance=ExtResource( 2 )]
+position = Vector2( -207.885, -669.969 )
+rotation = -3.11814e-05
+
+[node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D/Player1"]
+offset = Vector2( 200, -400 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = 0
+limit_smoothed = true
+smoothing_enabled = true
+offset_h = -1.0
+drag_margin_left = 0.0
+drag_margin_top = 1.0
+drag_margin_right = 0.0
+drag_margin_bottom = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D"]
+anims/cutscene = SubResource( 3 )
+
+[node name="Path2DBoss" type="Path2D" parent="."]
+position = Vector2( 462.479, -3.5305 )
+curve = SubResource( 4 )
+
+[node name="PathFollow2DBoss" type="PathFollow2D" parent="Path2DBoss"]
+position = Vector2( 3773.28, 2806.33 )
+rotation = 3.1381
+rotate = false
+loop = false
+script = ExtResource( 8 )
+
+[node name="Boss3" parent="Path2DBoss/PathFollow2DBoss" instance=ExtResource( 6 )]
+position = Vector2( -45.0083, 1064.92 )
+rotation = 3.14159
+
+[node name="EvilNinja" parent="Path2DBoss/PathFollow2DBoss" instance=ExtResource( 49 )]
+position = Vector2( -502.667, 1039.64 )
+rotation = 3.14159
+scale = Vector2( 1.2, 1.2 )
+
+[node name="EvilNinja2" parent="Path2DBoss/PathFollow2DBoss" instance=ExtResource( 49 )]
+position = Vector2( -336.027, 1038.01 )
+rotation = 3.14159
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Area2DBoss" type="Area2D" parent="."]
+position = Vector2( 3552.71, 1722.72 )
+collision_layer = 0
+collision_mask = 16
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DBoss"]
+position = Vector2( 15.2813, 0.818726 )
+shape = SubResource( 5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 30
+offset = Vector2( -700, -200 )
+transform = Transform2D( 1, 0, 0, 1, -700, -200 )
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+margin_left = 792.886
+margin_top = 1174.82
+margin_right = 3333.89
+margin_bottom = 1273.82
+custom_fonts/font = SubResource( 6 )
+text = "Suddenly,the master of the forbidden woods appeared with his goons
+ to show the two children how poorly thought their decision was."
+percent_visible = 0.0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 792.385
+margin_top = 1051.23
+margin_right = 4092.38
+margin_bottom = 1150.23
+custom_fonts/font = SubResource( 7 )
+text = "One fateful day, Ninja and his brother Junior were playing as usual,
+when Junior started running into the forbidden woods.           "
+percent_visible = 0.00970874
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+margin_left = 792.385
+margin_top = 1174.82
+margin_right = 4092.38
+margin_bottom = 1324.82
+custom_fonts/font = SubResource( 7 )
+text = "-Junior: Don't worry brother, i'll help you avenge my death.If you find 3 magical tombstones,
+i'll come to your aid.
+"
+percent_visible = 0.00970874
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+margin_left = 792.385
+margin_top = 1051.23
+margin_right = 4092.38
+margin_bottom = 1150.23
+custom_fonts/font = SubResource( 7 )
+text = "Not long after his brothers death, out of thin air, the forests ancient magic
+brought him back as a ghost.
+         "
+percent_visible = 0.00970874
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 482.283
+margin_top = 156.434
+margin_right = 950.283
+margin_bottom = 228.434
+rect_min_size = Vector2( 300, 60 )
+custom_colors/font_color = Color( 0.27451, 0.819608, 0.141176, 1 )
+custom_colors/font_color_pressed = Color( 0.682353, 0.839216, 0.65098, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Start the journey"
+
+[node name="Skip" type="Button" parent="CanvasLayer"]
+anchor_left = 1.287
+anchor_top = 1.071
+anchor_right = 1.287
+anchor_bottom = 1.071
+margin_left = -373.786
+margin_top = -90.2357
+margin_right = -13.7856
+margin_bottom = -18.2357
+theme = ExtResource( 11 )
+custom_fonts/font = SubResource( 10 )
+text = "Skip Cutscene"
+
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+margin_right = 4217.0
+margin_bottom = 2886.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GhostNinja" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3358.3, 710.577 )
+
+[node name="Area2DGhost" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DGhost"]
+position = Vector2( 5683.8, 1806.35 )
+shape = SubResource( 8 )
+
+[connection signal="body_entered" from="Area2D" to="Path2D/PathFollow2D/PlayerBrother" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Path2D/PathFollow2D/Player1" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Path2DBoss/PathFollow2DBoss" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Path2DBoss/PathFollow2DBoss/EvilNinja" method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Path2DBoss/PathFollow2DBoss/Boss3/Timer" to="Path2DBoss/PathFollow2DBoss" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2DBoss" to="Path2DBoss/PathFollow2DBoss" method="_on_Area2DBoss_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Skip" to="." method="_on_Skip_pressed"]
+[connection signal="body_entered" from="Area2DGhost" to="." method="_on_Area2DGhost_body_entered"]
+
+[editable path="ParallaxBackground"]
+[editable path="Path2DBoss/PathFollow2DBoss/Boss3"]
+[editable path="Path2DBoss/PathFollow2DBoss/Boss3/Hurtbox"]
+[editable path="Path2DBoss/PathFollow2DBoss/Boss3/PlayerDetectionZone"]
+[editable path="Path2DBoss/PathFollow2DBoss/Boss3/PlayerInRange"]
+[editable path="Path2DBoss/PathFollow2DBoss/Boss3/HitboxDash"]
+[editable path="Path2DBoss/PathFollow2DBoss/Boss3/Hitbox"]
+[editable path="Path2DBoss/PathFollow2DBoss/EvilNinja"]
+[editable path="Path2DBoss/PathFollow2DBoss/EvilNinja/Hurtbox"]
+[editable path="Path2DBoss/PathFollow2DBoss/EvilNinja/PlayerDetectionZone"]
+[editable path="Path2DBoss/PathFollow2DBoss/EvilNinja/PlayerInRange"]
+[editable path="Path2DBoss/PathFollow2DBoss/EvilNinja2"]
+[editable path="Path2DBoss/PathFollow2DBoss/EvilNinja2/Hurtbox"]
+[editable path="Path2DBoss/PathFollow2DBoss/EvilNinja2/PlayerDetectionZone"]
+[editable path="Path2DBoss/PathFollow2DBoss/EvilNinja2/PlayerInRange"]

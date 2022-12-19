@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Retro_No hope.mp3-a125f5dac1a314fddb65144b56493696.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/GameOver-Music/GameOver-Music/Retro_No hope.mp3"
+dest_files=[ "res://.import/Retro_No hope.mp3-a125f5dac1a314fddb65144b56493696.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

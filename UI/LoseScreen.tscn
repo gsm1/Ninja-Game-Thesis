@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://UI/LoseScreen.gd" type="Script" id=1]
+[ext_resource path="res://UI/ButtonTheme.tres" type="Theme" id=2]
+[ext_resource path="res://UI/poco/Poco.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 3 )
+
+[node name="LoseScreen" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -287.0
+margin_top = -84.0
+margin_right = 287.0
+margin_bottom = 140.0
+
+[node name="TryAgain" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_right = 574.0
+margin_bottom = 72.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "Try again?"
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 574.0
+margin_bottom = 148.0
+custom_fonts/font = SubResource( 3 )
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 152.0
+margin_right = 574.0
+margin_bottom = 224.0
+custom_fonts/font = SubResource( 4 )
+text = "Quit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -390.0
+margin_right = 390.0
+margin_bottom = 240.0
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer2"]
+margin_right = 780.0
+margin_bottom = 240.0
+custom_colors/font_color = Color( 0.27451, 0.819608, 0.141176, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "You Lose"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/TryAgain" to="." method="_on_TryAgain_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

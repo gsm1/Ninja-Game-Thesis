@@ -1,0 +1,382 @@
+[gd_scene load_steps=56 format=2]
+
+[ext_resource path="res://Enemies/HoodedNinja.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_7.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Evil Ninja 2/run/Evilninja2_run_3.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Evil Ninja 2/hit/Evilninja2_hit_6.png" type="Texture" id=5]
+[ext_resource path="res://Characters/Evil Ninja 2/run/Evilninja2_run_5.png" type="Texture" id=6]
+[ext_resource path="res://Characters/Evil Ninja 2/attach 1/Evilninja2_attack1_2.png" type="Texture" id=7]
+[ext_resource path="res://HurtHitbox/Hurtbox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Characters/Evil Ninja 2/idle/Evilninja2_idle_1.png" type="Texture" id=9]
+[ext_resource path="res://Characters/Evil Ninja 2/attach 1/Evilninja2_attack1_3.png" type="Texture" id=10]
+[ext_resource path="res://Characters/Evil Ninja 2/attack 2/Evilninja2_attack2_5.png" type="Texture" id=11]
+[ext_resource path="res://Characters/Evil Ninja 2/attack 2/Evilninja2_attack2_4.png" type="Texture" id=12]
+[ext_resource path="res://Characters/Evil Ninja 2/idle/Evilninja2_idle_3.png" type="Texture" id=13]
+[ext_resource path="res://Characters/Evil Ninja 2/hit/Evilninja2_hit_8.png" type="Texture" id=14]
+[ext_resource path="res://Characters/Evil Ninja 2/attach 1/Evilninja2_attack1_5.png" type="Texture" id=15]
+[ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_5.png" type="Texture" id=17]
+[ext_resource path="res://Characters/Evil Ninja 2/idle/Evilninja2_idle_4.png" type="Texture" id=18]
+[ext_resource path="res://Characters/Evil Ninja 2/run/Evilninja2_run_1.png" type="Texture" id=19]
+[ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_10.png" type="Texture" id=20]
+[ext_resource path="res://Characters/Evil Ninja 2/hit/Evilninja2_hit_5.png" type="Texture" id=21]
+[ext_resource path="res://Characters/Evil Ninja 2/attach 1/Evilninja2_attack1_1.png" type="Texture" id=22]
+[ext_resource path="res://Characters/Evil Ninja 2/hit/Evilninja2_hit_3.png" type="Texture" id=23]
+[ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_1.png" type="Texture" id=24]
+[ext_resource path="res://Characters/Evil Ninja 2/idle/Evilninja2_idle_2.png" type="Texture" id=25]
+[ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_6.png" type="Texture" id=26]
+[ext_resource path="res://Characters/Evil Ninja 2/attack 2/Evilninja2_attack2_2.png" type="Texture" id=27]
+[ext_resource path="res://PlayerDetectionZone.tscn" type="PackedScene" id=28]
+[ext_resource path="res://PlayerInRangShuriken.gd" type="Script" id=29]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Characters/Evil Ninja 2/hit/Evilninja2_hit_1.png" type="Texture" id=31]
+[ext_resource path="res://Characters/Evil Ninja 2/hit/Evilninja2_hit_7.png" type="Texture" id=32]
+[ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_9.png" type="Texture" id=33]
+[ext_resource path="res://Characters/Evil Ninja 2/hit/Evilninja2_hit_4.png" type="Texture" id=34]
+[ext_resource path="res://Characters/Evil Ninja 2/hit/Evilninja2_hit_2.png" type="Texture" id=35]
+[ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_2.png" type="Texture" id=36]
+[ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_8.png" type="Texture" id=37]
+[ext_resource path="res://Characters/Evil Ninja 2/run/Evilninja2_run_4.png" type="Texture" id=38]
+[ext_resource path="res://HurtHitbox/Hitbox.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Characters/Evil Ninja 2/attach 1/Evilninja2_attack1_4.png" type="Texture" id=41]
+[ext_resource path="res://Characters/Evil Ninja 2/attack 2/Evilninja2_attack2_3.png" type="Texture" id=42]
+[ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_4.png" type="Texture" id=43]
+[ext_resource path="res://Characters/Evil Ninja 2/attack 2/Evilninja2_attack2_1.png" type="Texture" id=44]
+[ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_3.png" type="Texture" id=45]
+[ext_resource path="res://Characters/Evil Ninja 2/run/Evilninja2_run_6.png" type="Texture" id=46]
+[ext_resource path="res://Characters/Evil Ninja 2/run/Evilninja2_run_2.png" type="Texture" id=47]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 64.1182
+height = 42.2953
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer:playback_speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitboxStun/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "attack1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "stun_hitbox_enable"
+}, {
+"args": [  ],
+"method": "hitbox_enable"
+}, {
+"args": [  ],
+"method": "hit_finished1"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationPlayer:playback_speed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 22 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 41 ), ExtResource( 15 ), ExtResource( 44 ), ExtResource( 27 ), ExtResource( 42 ), ExtResource( 12 ), ExtResource( 11 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitboxStun/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer:playback_speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 24 ), ExtResource( 36 ), ExtResource( 45 ), ExtResource( 43 ), ExtResource( 17 ), ExtResource( 26 ), ExtResource( 2 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 20 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "hit"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer:playback_speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 31 ), ExtResource( 35 ), ExtResource( 23 ), ExtResource( 34 ), ExtResource( 21 ), ExtResource( 5 ), ExtResource( 32 ), ExtResource( 14 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer:playback_speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 25 ), ExtResource( 13 ), ExtResource( 18 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer:playback_speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 19 ), ExtResource( 47 ), ExtResource( 3 ), ExtResource( 38 ), ExtResource( 6 ), ExtResource( 46 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 1332.36
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 78.6165, 83.7848 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 59.0454, 83.9328 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 88.558, 40.0201 )
+
+[node name="HoodedNinja" type="KinematicBody2D"]
+position = Vector2( -8.5918, 10.0238 )
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 16
+collision_mask = 3
+script = ExtResource( 1 )
+has_key = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -7.14296, 2.33873 )
+polygon = PoolVector2Array( -24.9361, 75.8012, 67.9269, 77.3886, 15.5427, -65.4775 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 8 )]
+visible = false
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -5.58403, 0.876759 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.8
+anims/RESET = SubResource( 11 )
+anims/attack1 = SubResource( 3 )
+anims/die = SubResource( 4 )
+anims/hit = SubResource( 5 )
+anims/idle = SubResource( 6 )
+anims/run = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 9 )
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 28 )]
+visible = false
+modulate = Color( 1, 1, 1, 0.231373 )
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+shape = SubResource( 9 )
+
+[node name="Stats" parent="." instance=ExtResource( 30 )]
+max_health = 5
+
+[node name="PlayerInRange" parent="." instance=ExtResource( 28 )]
+script = ExtResource( 29 )
+
+[node name="CollisionShape2D" parent="PlayerInRange" index="0"]
+self_modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( -94.7356, -6.45988 )
+shape = SubResource( 14 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 39 )]
+collision_mask = 4
+damage = 2
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( -75.9982, -5.23162 )
+shape = SubResource( 12 )
+
+[node name="HitboxStun" parent="." instance=ExtResource( 39 )]
+collision_mask = 4
+damage = 0
+
+[node name="CollisionShape2D" parent="HitboxStun" index="0"]
+position = Vector2( -84.7943, 46.5972 )
+shape = SubResource( 16 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="body_entered" from="PlayerInRange" to="PlayerInRange" method="_on_PlayerInRange_body_entered"]
+[connection signal="body_exited" from="PlayerInRange" to="PlayerInRange" method="_on_PlayerInRange_body_exited"]
+
+[editable path="Hurtbox"]
+[editable path="PlayerDetectionZone"]
+[editable path="PlayerInRange"]
+[editable path="Hitbox"]
+[editable path="HitboxStun"]
