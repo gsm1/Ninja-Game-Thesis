@@ -553,6 +553,7 @@ __meta__ = {
 MAX_SPEED = 8000
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 17.1151, -42.502 )
 rotation = 0.253073
 polygon = PoolVector2Array( -54.3031, 85.4193, 52.7587, 56.5705, 13.8497, -69.9428 )
@@ -560,7 +561,6 @@ polygon = PoolVector2Array( -54.3031, 85.4193, 52.7587, 56.5705, 13.8497, -69.94
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 6 )
 hframes = 51
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5
@@ -581,22 +581,26 @@ active = true
 parameters/playback = SubResource( 48 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
+visible = false
 position = Vector2( 0, -40 )
 __meta__ = {
 "_gizmo_extents_": 33.0
 }
 
 [node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 18.4853, -1.32037 )
 collision_mask = 8
 damage = 2
 
 [node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
+visible = false
 position = Vector2( 59.8996, 4.59509 )
 shape = SubResource( 49 )
 disabled = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 8 )]
+visible = false
 collision_layer = 4
 collision_mask = 16
 

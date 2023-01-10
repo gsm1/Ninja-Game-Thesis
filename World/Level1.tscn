@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://UI/Font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Enemies/Boss1.tscn" type="PackedScene" id=2]
@@ -21,225 +21,6 @@
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 726.689, 268.374 )
-
-[sub_resource type="Animation" id=9]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ null ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimationPlayer:playback_speed")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.8 ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "attack1"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ null, null, null, null ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [  ],
-"method": "hitbox_enable"
-}, {
-"args": [  ],
-"method": "hit_finished1"
-} ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AnimationPlayer:playback_speed")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.0 ]
-}
-
-[sub_resource type="Animation" id=11]
-resource_name = "die"
-length = 0.9
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ null, null, null, null, null, null, null, null, null ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimationPlayer:playback_speed")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.0 ]
-}
-
-[sub_resource type="Animation" id=12]
-resource_name = "hit"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ null, null, null, null, null, null, null, null ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimationPlayer:playback_speed")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.2 ]
-}
-
-[sub_resource type="Animation" id=13]
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ null, null, null, null, null ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimationPlayer:playback_speed")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=14]
-length = 0.6
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ null, null, null, null, null, null ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimationPlayer:playback_speed")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.0 ]
-}
 
 [node name="Level1" type="Node2D"]
 position = Vector2( -37.443, -697.511 )
@@ -264,6 +45,9 @@ drag_margin_bottom = 0.0
 position = Vector2( 630.617, 1825.2 )
 z_index = 1
 collision_mask = 3
+
+[node name="Sprite" parent="Player1" index="1"]
+frame = 2
 
 [node name="AnimationTree" parent="Player1" index="3"]
 parameters/playback = SubResource( 1 )
@@ -386,26 +170,18 @@ shape = SubResource( 2 )
 
 [node name="Samurais" type="Node" parent="."]
 
-[node name="Samurai2" parent="Samurais" instance=ExtResource( 16 )]
-position = Vector2( 15313.2, 1142.37 )
-
-[node name="Samurai5" parent="Samurais" instance=ExtResource( 16 )]
-position = Vector2( 15641.6, 1140.46 )
-has_key = true
-
-[node name="AnimationPlayer" parent="Samurais/Samurai5" index="2"]
-anims/RESET = SubResource( 9 )
-anims/attack1 = SubResource( 10 )
-anims/die = SubResource( 11 )
-anims/hit = SubResource( 12 )
-anims/idle = SubResource( 13 )
-anims/run = SubResource( 14 )
-
 [node name="Samurai3" parent="Samurais" instance=ExtResource( 16 )]
 position = Vector2( 5093.91, 1135.72 )
 
 [node name="Samurai4" parent="Samurais" instance=ExtResource( 16 )]
 position = Vector2( 4951.21, 1135.72 )
+
+[node name="Samurai" parent="Samurais" instance=ExtResource( 16 )]
+position = Vector2( 15558.2, 1121.26 )
+
+[node name="Samurai2" parent="Samurais" instance=ExtResource( 16 )]
+position = Vector2( 15369.8, 1127.99 )
+has_key = true
 
 [node name="Portal" parent="." instance=ExtResource( 4 )]
 position = Vector2( 22918.4, 1748.34 )
@@ -420,7 +196,7 @@ position = Vector2( 13015.4, 1154.69 )
 heartfull = false
 
 [node name="AnimatedSprite" parent="Objects/Chest2" index="0"]
-frame = 2
+frame = 3
 
 [node name="Gate" parent="Objects" instance=ExtResource( 10 )]
 position = Vector2( 16229.3, 893.119 )
@@ -432,7 +208,7 @@ position = Vector2( 8305.14, 937.099 )
 position = Vector2( 17672.1, 1152.64 )
 
 [node name="AnimatedSprite" parent="Objects/Chest" index="0"]
-frame = 2
+frame = 3
 
 [node name="Tombstone" parent="Objects" instance=ExtResource( 14 )]
 position = Vector2( 1821.03, 1134.03 )
@@ -463,8 +239,8 @@ texture = ExtResource( 11 )
 [connection signal="body_exited" from="LabelAreas/LabelArea" to="." method="_on_LabelArea_body_exited"]
 [connection signal="body_entered" from="LabelAreas/LabeBossArea" to="." method="_on_LabelArea_body_entered"]
 [connection signal="body_entered" from="LabelAreas/LabeBossArea" to="." method="_on_LabeBossArea_body_entered"]
-[connection signal="body_exited" from="LabelAreas/LabeBossArea" to="." method="_on_LabelArea_body_exited"]
 [connection signal="body_exited" from="LabelAreas/LabeBossArea" to="." method="_on_LabeBossArea_body_exited"]
+[connection signal="body_exited" from="LabelAreas/LabeBossArea" to="." method="_on_LabelArea_body_exited"]
 [connection signal="body_entered" from="LabelAreas/LabelGate" to="." method="_on_LabelArea_body_entered"]
 [connection signal="body_entered" from="LabelAreas/LabelGate" to="." method="_on_LabelGate_body_entered"]
 [connection signal="body_exited" from="LabelAreas/LabelGate" to="." method="_on_LabelGate_body_exited"]
@@ -480,18 +256,6 @@ texture = ExtResource( 11 )
 [editable path="Boss1/Hitbox"]
 [editable path="Boss1/PlayerInRange"]
 [editable path="Boss1/ThrowHitbox"]
-[editable path="Samurais/Samurai2"]
-[editable path="Samurais/Samurai2/Hurtbox"]
-[editable path="Samurais/Samurai2/PlayerDetectionZone"]
-[editable path="Samurais/Samurai2/PlayerInRange"]
-[editable path="Samurais/Samurai2/Hitbox"]
-[editable path="Samurais/Samurai2/SoftCollision"]
-[editable path="Samurais/Samurai5"]
-[editable path="Samurais/Samurai5/Hurtbox"]
-[editable path="Samurais/Samurai5/PlayerDetectionZone"]
-[editable path="Samurais/Samurai5/PlayerInRange"]
-[editable path="Samurais/Samurai5/Hitbox"]
-[editable path="Samurais/Samurai5/SoftCollision"]
 [editable path="Portal"]
 [editable path="Objects/Chest2"]
 [editable path="Objects/Chest"]

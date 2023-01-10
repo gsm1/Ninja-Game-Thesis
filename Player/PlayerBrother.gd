@@ -19,8 +19,6 @@ func apply_gravity():
 	else:
 		velocity.y += GRAVITY
 
-
-
 func _on_Hurtbox_area_entered(area):
 	velocity.x = 0
 	sprite.play("die")
@@ -30,7 +28,6 @@ func _on_Hurtbox_area_entered(area):
 func cutscenerun():
 	#function ωστε να τρεχει οταν θελουμε στο cutscene
 	sprite.play("run")
-
 
 func _on_Area2D_body_entered(body):
 	#function ωστε να ειναι ακινητος οταν θελουμε στο cutscene

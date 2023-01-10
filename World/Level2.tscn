@@ -568,8 +568,8 @@ scale = Vector2( 1, 5.26845 )
 texture = ExtResource( 15 )
 
 [node name="Rope2" type="Sprite" parent="Objects"]
-position = Vector2( 14963.8, 111.509 )
-scale = Vector2( 1, 5.26845 )
+position = Vector2( 14965.2, 122.823 )
+scale = Vector2( 1, 5.28 )
 texture = ExtResource( 15 )
 
 [node name="Rock" parent="Objects" instance=ExtResource( 16 )]

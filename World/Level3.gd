@@ -7,7 +7,7 @@ var bossflag = false
 var hoodedflag = false
 var ninja_died5 = false
 var ninja_died4 = false
-var starting_max_health
+var starting_max_health = PlayerStats.max_health
 onready var timer = $Timer
 onready var label1 = $CanvasLayer/Label
 onready var label2 = $CanvasLayer/Label2
@@ -22,7 +22,7 @@ func _ready():
 	Music.play_music()
 	LevelsUnlocked.level3_unlocked(true) #ξεκλειδωνεται το level3 στο μενου μολις μπαινουμε σε αυτο
 	LevelsUnlocked.save_level() #κανουμε save το παραπανω
-	starting_max_health = PlayerStats.max_health #κραταμε το αρχικο max health σε περιπτωση που πεθανουμε και ξαναξεκινησουμε
+	PlayerStats.max_health_lv3 = starting_max_health #κραταμε το αρχικο max health σε περιπτωση που πεθανουμε και ξαναξεκινησουμε
 
 func _physics_process(delta):
 	# ελεγχοι για εμφανιση των label

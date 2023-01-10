@@ -155,7 +155,6 @@ func _on_Hurtbox_area_entered(area):
 		hurt = true
 		velocity = Vector2.ZERO
 		state = HURT
-	
 	if stats.health <= 0 :
 		state = DIE
 
@@ -173,15 +172,11 @@ func cutscene():
 	state = CUTSCENE
 	if flagbro == false:
 		state_machine.travel("run")
-
 func _on_Area2D_body_entered(body):
 	#για να σταματαει χωρις input στο cutscene
 	state = CUTSCENE
 	flagbro = true
 	state_machine.travel("idle")
-
-
-
 
 func _on_Boss3_boss_died():
 	#οταν πεθαινει το boss του τελευταιου level θελουμε να μην μπορουμε να χειριστουμε τον παιχτη πλεον και να μην δεχεται damage

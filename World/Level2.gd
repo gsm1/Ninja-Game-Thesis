@@ -10,6 +10,7 @@ onready var label7 = $CanvasLayer2/Label7
 onready var timer = $Timer
 onready var rock = $Objects/Rock
 onready var rock2 = $Objects/Rock2
+var starting_max_health = PlayerStats.max_health
 var startflag = false
 var leverflag = false
 var leverflag2 = false
@@ -19,9 +20,9 @@ var gateflag = false
 func _ready():
 	LevelsUnlocked.level2_unlocked(true)
 	LevelsUnlocked.save_level()
-#	pass
 	Music.play_music()
 	Music.stop_boss_music()
+	PlayerStats.max_health_lv2 = starting_max_health   #κραταμε το αρχικο max health σε περιπτωση που πεθανουμε και ξαναξεκινησουμε
 
 func _physics_process(delta):
 	#Χρησιμοποιουμε τα παρακατω flag ωστε να εμφανιζεται το Label στην προκαθορισμενη περιοχη
@@ -66,16 +67,10 @@ func _on_LabelLeverFound_body_entered(body):
 	if boulderflag == false:
 		leverflag = true
 		timer.start(5)
-#	label3.visible = false
 	if boulderflag == true:
 		leverflag2 = true
 		timer.start(5)
 		
-		
-
-
-
-
 
 func _on_LabelBoulderFound_body_entered(body):
 	if leverflag3 == false:
@@ -83,21 +78,14 @@ func _on_LabelBoulderFound_body_entered(body):
 		timer.start(4)
 
 
-
-
-
 func _on_LabelGate_body_entered(body):
 	gateflag = true
 	timer.start(5)
-
-
-
 
 func _on_Lever2_body_entered(body):
 	$Objects/Lever2/AnimatedSprite.play("default")
 	$Objects/Lever2.set_deferred("monitoring",false)
 	rock2.position.y += 600
-
 
 func _on_Timer_timeout():
 	#Ο ρολος του timer ειναι να εξαφανιζεται το κειμενο μετα απο προκαθορισμενο χρονο
