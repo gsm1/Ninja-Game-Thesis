@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Objects/PNG/Treasure Chest/treasure_chest_1.png" type="Texture" id=1]
 [ext_resource path="res://Objects/PNG/Treasure Chest/treasure_chest_3.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Objects/Chest.gd" type="Script" id=5]
 [ext_resource path="res://UI/HeartUIFull.png" type="Texture" id=6]
 [ext_resource path="res://UI/HeartUIEmpty.png" type="Texture" id=7]
+[ext_resource path="res://Music and Sounds/chest.ogg" type="AudioStream" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -84,6 +85,10 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerNear"]
 shape = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+bus = "Sounds"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="PlayerNear" to="." method="_on_PlayerNear_body_entered"]

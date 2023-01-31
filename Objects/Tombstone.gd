@@ -5,6 +5,7 @@ func _ready():
 
 func _on_PlayerNear_body_entered(body):
 	#Οταν ο παιχτης ειναι κοντα εμφανιζεται ο ταφος
+	$AudioStreamPlayer.play()
 	$AnimatedSprite.play("default")
 
 func _on_PlayerNear_body_exited(body):

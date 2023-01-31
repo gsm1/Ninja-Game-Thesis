@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://HurtHitbox/Hurtbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Bee/fly/Bee_Fly_4.png" type="Texture" id=2]
@@ -39,6 +39,7 @@
 [ext_resource path="res://Characters/Bee/attack 1/Bee_Attack1_3.png" type="Texture" id=37]
 [ext_resource path="res://Characters/Bee/hit/Bee_Hit_12.png" type="Texture" id=38]
 [ext_resource path="res://HurtHitbox/SoftCollision.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Music and Sounds/sfx_exp_shortest_hard8.wav" type="AudioStream" id=40]
 
 [sub_resource type="Animation" id=9]
 length = 0.001
@@ -110,6 +111,20 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 1.5 ]
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.014989,
+"start_offset": 0.0,
+"stream": ExtResource( 40 )
+} ],
+"times": PoolRealArray( 0.4 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -219,7 +234,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 9 )
+texture = ExtResource( 30 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5
@@ -267,6 +282,10 @@ position = Vector2( -1.49832, 68.9221 )
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 shape = SubResource( 10 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 40 )
+bus = "Sounds"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]

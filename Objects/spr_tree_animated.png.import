@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/48x48 trees.png-a9922761ca0022246e35a1dc64d5a337.stex"
+path="res://.import/spr_tree_animated.png-e5f4468959a6fd354227e461c3adb140.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/PNG/48x48 trees.png"
-dest_files=[ "res://.import/48x48 trees.png-a9922761ca0022246e35a1dc64d5a337.stex" ]
+source_file="res://Objects/spr_tree_animated.png"
+dest_files=[ "res://.import/spr_tree_animated.png-e5f4468959a6fd354227e461c3adb140.stex" ]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

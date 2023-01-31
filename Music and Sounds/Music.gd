@@ -1,5 +1,8 @@
 extends Node
 
+var slider_music = 0.5
+var slider_sound = 0.5
+
 func play_music():
 	# αν δεν παιζει ηδη, ξεκιναει η μουσικη
 	if $WorldMusic.playing == false:

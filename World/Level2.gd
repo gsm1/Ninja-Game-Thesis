@@ -56,6 +56,7 @@ func _on_LabelArea_body_entered(body):
 	
 
 func _on_Lever_body_entered(body):
+	$Objects/Lever/AudioStreamPlayer.play()
 	$Objects/Lever/AnimatedSprite.play("default")
 	leverflag3 = true
 	boulderflag = false
@@ -83,9 +84,10 @@ func _on_LabelGate_body_entered(body):
 	timer.start(5)
 
 func _on_Lever2_body_entered(body):
+	$Objects/Lever/AudioStreamPlayer.play()
 	$Objects/Lever2/AnimatedSprite.play("default")
 	$Objects/Lever2.set_deferred("monitoring",false)
-	rock2.position.y += 600
+	rock2.position.y += 580
 
 func _on_Timer_timeout():
 	#Ο ρολος του timer ειναι να εξαφανιζεται το κειμενο μετα απο προκαθορισμενο χρονο

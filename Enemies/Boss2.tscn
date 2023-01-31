@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://Characters/Boss 2/hit/Boss2_hit_5.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Boss 2/attack 2/Boss2_attack2_5.png" type="Texture" id=2]
@@ -63,7 +63,11 @@
 [ext_resource path="res://HurtHitbox/Hitbox.tscn" type="PackedScene" id=61]
 [ext_resource path="res://HurtHitbox/PlayerInRange.tscn" type="PackedScene" id=62]
 [ext_resource path="res://Enemies/PlayerInAxeThrow.gd" type="Script" id=63]
+[ext_resource path="res://Music and Sounds/Socapex - big punch.wav" type="AudioStream" id=64]
+[ext_resource path="res://Music and Sounds/swish_4.wav" type="AudioStream" id=65]
 [ext_resource path="res://Characters/Boss 2/attack 2/Boss2_attack2_1 - Copy.png" type="Texture" id=66]
+[ext_resource path="res://Music and Sounds/monster-1.wav" type="AudioStream" id=67]
+[ext_resource path="res://Music and Sounds/monster-5.wav" type="AudioStream" id=68]
 
 [sub_resource type="Animation" id=12]
 length = 0.001
@@ -171,6 +175,20 @@ tracks/4/keys = {
 "method": "hit_finished"
 } ]
 }
+tracks/5/type = "audio"
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0749451,
+"start_offset": 0.0,
+"stream": ExtResource( 65 )
+} ],
+"times": PoolRealArray( 0.5 )
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "attack2"
@@ -263,6 +281,20 @@ tracks/6/keys = {
 "method": "rockthrow_finished"
 } ]
 }
+tracks/7/type = "audio"
+tracks/7/path = NodePath("AudioStreamPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.428916,
+"start_offset": 0.0,
+"stream": ExtResource( 64 )
+} ],
+"times": PoolRealArray( 0.6 )
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "die"
@@ -303,6 +335,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 1.0 ]
 }
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 67 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "hit"
@@ -342,6 +388,20 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 4.0 ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 68 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=5]
@@ -516,6 +576,10 @@ script = ExtResource( 63 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInRockThrow"]
 position = Vector2( -318.887, -33.4832 )
 shape = SubResource( 11 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 68 )
+bus = "Sounds"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]

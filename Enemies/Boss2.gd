@@ -94,9 +94,7 @@ func _on_Hurtbox_area_entered(area):
 	knockback = area.knockback_vector * 250
 	$Hitbox.set_collision_mask_bit(2,false)
 	$RockHitbox.set_collision_mask_bit(2,false)
-	
 	hurt = true
-	print (stats.health)
 	if stats.health > 0:
 		stats.health -= area.damage
 		sprite.play("hit")

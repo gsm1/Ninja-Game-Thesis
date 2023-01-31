@@ -1,11 +1,8 @@
 extends Node
 
-
-
 var level2 = false #αρχικα τα level2 και 3 ειναι κλειδωμενα
 var level3 = false
 var levels = ["false", "false"] #δημιουργω μια λιστα με values για τα level2 και 3
-
 
 func level2_unlocked(value):
 	level2 = value

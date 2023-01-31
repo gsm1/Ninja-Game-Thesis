@@ -563,13 +563,13 @@ position = Vector2( 6574.1, -32.6133 )
 position = Vector2( 19285.9, -38.4014 )
 
 [node name="Rope" type="Sprite" parent="Objects"]
-position = Vector2( 7332.8, 169.076 )
-scale = Vector2( 1, 5.26845 )
+position = Vector2( 7332.8, 158.997 )
+scale = Vector2( 1, 5.34719 )
 texture = ExtResource( 15 )
 
 [node name="Rope2" type="Sprite" parent="Objects"]
-position = Vector2( 14965.2, 122.823 )
-scale = Vector2( 1, 5.28 )
+position = Vector2( 14981.3, 149.448 )
+scale = Vector2( 1, 5.37921 )
 texture = ExtResource( 15 )
 
 [node name="Rock" parent="Objects" instance=ExtResource( 16 )]
@@ -577,7 +577,7 @@ position = Vector2( 7329.55, 796.6 )
 collision_layer = 2
 
 [node name="Rock2" parent="Objects" instance=ExtResource( 16 )]
-position = Vector2( 14958.7, 168.815 )
+position = Vector2( 14976.2, 208.5 )
 collision_layer = 2
 
 [node name="Tombstone" parent="Objects" instance=ExtResource( 11 )]

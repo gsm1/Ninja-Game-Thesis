@@ -38,6 +38,7 @@ func _physics_process(delta):
 		label4.percent_visible += 0.005
 
 func _on_Lever_body_entered(body):
+	$Objects/Lever/AudioStreamPlayer.play()
 	cageflag = true
 	label1.visible = false
 	timer.start(6)

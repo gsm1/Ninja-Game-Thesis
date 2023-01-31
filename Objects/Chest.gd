@@ -16,6 +16,7 @@ func _on_Area2D_body_entered(body):
 		PlayerStats.health = PlayerStats.max_health
 
 func _on_PlayerNear_body_entered(body):
+	$AudioStreamPlayer.play()
 	if heartfull == false:
 		heartempty.position.y -= 20
 		heartempty.visible = true

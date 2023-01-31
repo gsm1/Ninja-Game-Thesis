@@ -581,20 +581,17 @@ active = true
 parameters/playback = SubResource( 48 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
-visible = false
 position = Vector2( 0, -40 )
 __meta__ = {
 "_gizmo_extents_": 33.0
 }
 
 [node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource( 1 )]
-visible = false
 position = Vector2( 18.4853, -1.32037 )
 collision_mask = 8
 damage = 2
 
 [node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
-visible = false
 position = Vector2( 59.8996, 4.59509 )
 shape = SubResource( 49 )
 disabled = true
@@ -611,6 +608,7 @@ shape = SubResource( 50 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+bus = "Sounds"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 

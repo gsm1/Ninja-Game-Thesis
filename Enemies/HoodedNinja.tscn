@@ -1,8 +1,9 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Enemies/HoodedNinja.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_7.png" type="Texture" id=2]
 [ext_resource path="res://Characters/Evil Ninja 2/run/Evilninja2_run_3.png" type="Texture" id=3]
+[ext_resource path="res://Music and Sounds/handleSmallLeather2.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Characters/Evil Ninja 2/hit/Evilninja2_hit_6.png" type="Texture" id=5]
 [ext_resource path="res://Characters/Evil Ninja 2/run/Evilninja2_run_5.png" type="Texture" id=6]
 [ext_resource path="res://Characters/Evil Ninja 2/attach 1/Evilninja2_attack1_2.png" type="Texture" id=7]
@@ -14,6 +15,7 @@
 [ext_resource path="res://Characters/Evil Ninja 2/idle/Evilninja2_idle_3.png" type="Texture" id=13]
 [ext_resource path="res://Characters/Evil Ninja 2/hit/Evilninja2_hit_8.png" type="Texture" id=14]
 [ext_resource path="res://Characters/Evil Ninja 2/attach 1/Evilninja2_attack1_5.png" type="Texture" id=15]
+[ext_resource path="res://Music and Sounds/swish_2.wav" type="AudioStream" id=16]
 [ext_resource path="res://Characters/Evil Ninja 2/die/Evilninja2_die_5.png" type="Texture" id=17]
 [ext_resource path="res://Characters/Evil Ninja 2/idle/Evilninja2_idle_4.png" type="Texture" id=18]
 [ext_resource path="res://Characters/Evil Ninja 2/run/Evilninja2_run_1.png" type="Texture" id=19]
@@ -169,6 +171,24 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.167185,
+"start_offset": 0.0,
+"stream": ExtResource( 16 )
+} ],
+"times": PoolRealArray( 0.4, 0.8 )
 }
 
 [sub_resource type="Animation" id=4]
@@ -370,6 +390,10 @@ damage = 0
 [node name="CollisionShape2D" parent="HitboxStun" index="0"]
 position = Vector2( -84.7943, 46.5972 )
 shape = SubResource( 16 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+bus = "Sounds"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="PlayerInRange" to="PlayerInRange" method="_on_PlayerInRange_body_entered"]
