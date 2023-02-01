@@ -28,6 +28,17 @@ func _on_Quit_pressed():
 
 func _on_MainMenu_pressed():
 	self.paused = not paused
+	if get_tree().current_scene.name == "Level1":
+		PlayerStats.max_health = 5
+		PlayerStats.health = 5
+	elif get_tree().current_scene.name == "Level2":
+		PlayerStats.max_health = PlayerStats.max_health_lv2
+		PlayerStats.health = PlayerStats.max_health_lv2
+	elif get_tree().current_scene.name == "Level3":
+		PlayerStats.max_health = PlayerStats.max_health_lv3
+		PlayerStats.health = PlayerStats.max_health_lv3
+	PlayerStats.ultra = 0
+	PlayerStats.key_obtained = false
 	get_tree().change_scene("res://UI/Menu.tscn")
 
 

@@ -47,7 +47,7 @@ z_index = 1
 collision_mask = 3
 
 [node name="Sprite" parent="Player1" index="1"]
-frame = 2
+frame = 1
 
 [node name="AnimationTree" parent="Player1" index="3"]
 parameters/playback = SubResource( 1 )
@@ -237,14 +237,14 @@ texture = ExtResource( 11 )
 
 [connection signal="body_entered" from="LabelAreas/LabelArea" to="." method="_on_LabelArea_body_entered"]
 [connection signal="body_exited" from="LabelAreas/LabelArea" to="." method="_on_LabelArea_body_exited"]
-[connection signal="body_entered" from="LabelAreas/LabeBossArea" to="." method="_on_LabeBossArea_body_entered"]
 [connection signal="body_entered" from="LabelAreas/LabeBossArea" to="." method="_on_LabelArea_body_entered"]
-[connection signal="body_exited" from="LabelAreas/LabeBossArea" to="." method="_on_LabeBossArea_body_exited"]
+[connection signal="body_entered" from="LabelAreas/LabeBossArea" to="." method="_on_LabeBossArea_body_entered"]
 [connection signal="body_exited" from="LabelAreas/LabeBossArea" to="." method="_on_LabelArea_body_exited"]
+[connection signal="body_exited" from="LabelAreas/LabeBossArea" to="." method="_on_LabeBossArea_body_exited"]
 [connection signal="body_entered" from="LabelAreas/LabelGate" to="." method="_on_LabelArea_body_entered"]
 [connection signal="body_entered" from="LabelAreas/LabelGate" to="." method="_on_LabelGate_body_entered"]
-[connection signal="body_exited" from="LabelAreas/LabelGate" to="." method="_on_LabelArea_body_exited"]
 [connection signal="body_exited" from="LabelAreas/LabelGate" to="." method="_on_LabelGate_body_exited"]
+[connection signal="body_exited" from="LabelAreas/LabelGate" to="." method="_on_LabelArea_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Player1"]
