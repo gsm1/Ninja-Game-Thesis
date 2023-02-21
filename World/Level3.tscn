@@ -436,10 +436,10 @@ __meta__ = {
 }
 
 [node name="Samurai" parent="." instance=ExtResource( 21 )]
-position = Vector2( 5966.84, 1040.46 )
+position = Vector2( 6135.02, 1047.19 )
 
 [node name="Samurai2" parent="." instance=ExtResource( 21 )]
-position = Vector2( 5630.06, 1063.29 )
+position = Vector2( 6410.41, 1022.93 )
 
 [node name="PlayerDetectionZone" parent="Samurai2" index="4"]
 visible = true

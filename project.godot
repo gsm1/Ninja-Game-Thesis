@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Ninja Game Thesis"
-run/main_scene="res://World/Level1.tscn"
+run/main_scene="res://UI/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -30,9 +30,11 @@ PauseMenu="*res://UI/PauseMenu.tscn"
 
 window/size/width=1920
 window/size/height=1080
+window/size/fullscreen=true
 window/size/test_width=1920
 window/size/test_height=1080
 window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [global]
 
